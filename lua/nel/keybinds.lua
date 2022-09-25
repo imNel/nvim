@@ -1,5 +1,5 @@
-local nnoremap = require('nel.keymap').nnoremap
-local inoremap = require('nel.keymap').inoremap
+local nnoremap = require('nel.utils.keymap').nnoremap
+local inoremap = require('nel.utils.keymap').inoremap
 
 -- Launch telescope
 nnoremap("<C-p>", "<cmd>Telescope find_files hidden=true no_ignore=true<CR>")
