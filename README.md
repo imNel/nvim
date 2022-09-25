@@ -7,7 +7,9 @@ After trying out a few configs, I found that I liked a few things from all of th
 ## Install
 
 Make sure to backup existing configs before cloning!
-`git clone https://github.com/imNel/nvim.git ~/.config/nvim/`
+```
+git clone https://github.com/imNel/nvim.git ~/.config/nvim/
+```
 
 ## Contributing
 
