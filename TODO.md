@@ -11,3 +11,6 @@
 - remap telescope find files to ctrl space
 - remap autocomplete to ctrl space
 - look into more git plugins
+- nvim dashboard
+- nvim colorizer
+- mouse cursor working in vim plugin??
