@@ -23,44 +23,71 @@ return require('packer').startup(function(use)
   }
 
   -- Theme
-  use 'folke/tokyonight.nvim'
+  use {
+    'folke/tokyonight.nvim',
+    config = function() 
+      vim.cmd[[colorscheme tokyonight]]
+    end
+  }
 
   -- Dashboard nvim -- need to configure before uncommenting
   -- use 'glepnir/dashboard-nvim'
   
-  -- LSP
-  use 'neovim/nvim-lspconfig'
-  use 'jose-elias-alvarez/null-ls.nvim'
-
   -- Snippets
   use 'L3MON4D3/LuaSnip'
 
   -- Autocomplete
-  use 'hrsh7th/nvim-cmp'
+  use 'onsails/lspkind.nvim'
+  use {
+    'hrsh7th/nvim-cmp', 
+    config = function()
+      require('plugins.config.cmp')
+    end
+  }
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-nvim-lua'
   use 'hrsh7th/cmp-cmdline'
   use 'saadparwaiz1/cmp_luasnip'
-  use 'onsails/lspkind.nvim'
+
+  -- LSP
+  use {
+    'neovim/nvim-lspconfig', 
+    config = function()
+      require('plugins.config.lsp')
+    end
+  }
+  use {
+    'jose-elias-alvarez/null-ls.nvim',
+    config = function()
+      require('plugins.config.null-ls')
+    end
+  }
   
   -- Telescope
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
 
   -- Lualine
-  use 'kyazdani42/nvim-web-devicons' 
-  use 'nvim-lualine/lualine.nvim'
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    config = function()
+      require('plugins.config.lualine')
+    end,
+  }
 
   -- Comment Toggle
-  use 'terrortylor/nvim-comment'
+  use {
+    'terrortylor/nvim-comment',
+    config = function()
+      require('plugins.config.comment')
+    end
+  }
 
   -- Git
   use 'f-person/git-blame.nvim'
-  
-  -- Colors
-  use 'norcalli/nvim-colorizer.lua'
 
   if packer_bootstrap then
     require('packer').sync()

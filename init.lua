@@ -1,2 +1,3 @@
--- Load Personal Config
-require('nel.init')
+require('nel.init') -- Load Personal Config
+require('plugins.init') -- Load Plugin Configs
+
