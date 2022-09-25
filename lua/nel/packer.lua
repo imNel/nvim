@@ -1,5 +1,4 @@
--- vim.cmd [[packadd packer.nvim]]
-
+-- Make sure packer is installed on first launch
 local ensure_packer = function()
   local fn = vim.fn
   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -17,6 +16,7 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  -- Treesitter
   use {
     'nvim-treesitter/nvim-treesitter',
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
@@ -24,6 +24,9 @@ return require('packer').startup(function(use)
 
   -- Theme
   use 'folke/tokyonight.nvim'
+
+  -- Dashboard nvim -- need to configure before uncommenting
+  -- use 'glepnir/dashboard-nvim'
   
   -- LSP
   use 'neovim/nvim-lspconfig'
