@@ -14,3 +14,6 @@
 - nvim dashboard
 - nvim colorizer
 - mouse cursor working in vim plugin??
+- bufferline with shift h and l to navigate buffers
+- better way to split windows
+- netrw replacement/setup? vscode-like tree is convenient but maybe a better alternative. something similar to ranger maybe
