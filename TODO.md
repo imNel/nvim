@@ -3,7 +3,6 @@
 - keybind for formatting
 - lua line formatting
 - min line height
-- remap autocomplete to ctrl space
 - look into more git plugins
 - nvim dashboard
 - nvim colorizer
