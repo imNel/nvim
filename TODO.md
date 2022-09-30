@@ -1,5 +1,4 @@
 # Todo
-- Implement leader key
 - remove format on save
 - keybind for formatting
 - keybind to yank to clipboard (something to do with "+y"?)

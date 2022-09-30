@@ -1,4 +1,5 @@
 local o = vim.opt
+local g = vim.g
 
 -- Line Numbers
 o.number = true
@@ -16,3 +17,4 @@ o.smartindent = true
 o.wrap = false
 o.guicursor = "" -- Removes thin cursor
 o.mouse = "a" -- Fixes mouse highlighting etc
+g.mapleader = " "
