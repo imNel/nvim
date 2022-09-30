@@ -89,6 +89,18 @@ return require('packer').startup(function(use)
   -- Git
   use 'f-person/git-blame.nvim'
 
+  -- Auto-size windows
+  use { 
+    "anuvyklack/windows.nvim",
+    requires = {
+      "anuvyklack/middleclass",
+    },
+    config = function()
+      require('windows').setup()
+    end
+  }
+
+  -- Auto install packer if not detected
   if packer_bootstrap then
     require('packer').sync()
   end

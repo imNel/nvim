@@ -1,13 +1,11 @@
 # Todo
 - Implement leader key
 - Control hjkl for moving windows
-- Windows plugin I used in lvim
 - remove format on save
 - keybind for formatting
 - keybind to yank to clipboard (something to do with "+y"?)
 - lua line formatting
 - min line height
-- ctrl w + z to maximize window with that plugin
 - remap telescope find files to ctrl space
 - remap autocomplete to ctrl space
 - look into more git plugins
