@@ -19,4 +19,10 @@ nnoremap("gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
 nnoremap("gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
 nnoremap("gr", "<cmd>lua vim.lsp.buf.references()<CR>")
 nnoremap("gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
+
+-- Window Keybinds
 nnoremap("<C-w>z", "<cmd>:WindowsMaximize<CR>")
+nnoremap("<C-h>", "<C-w>h")
+nnoremap("<C-j>", "<C-w>j")
+nnoremap("<C-k>", "<C-w>k")
+nnoremap("<C-l>", "<C-w>l")
