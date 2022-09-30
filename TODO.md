@@ -1,9 +1,10 @@
 # Todo
-- lua line formatting
+- lua line theming
+- telescope theming
 - look into more git plugins
 - nvim dashboard
 - nvim colorizer
-- bufferline with shift h and l to navigate buffers
+- bufferline with telescope, keybinds to navigate buffers?
 - better way to split windows
 - netrw replacement/setup? vscode-like tree is convenient but maybe a better alternative. something similar to ranger maybe
 - auto switch to right when creating buffer split
