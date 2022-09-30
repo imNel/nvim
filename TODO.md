@@ -2,7 +2,6 @@
 - remove format on save
 - keybind for formatting
 - lua line formatting
-- min line height
 - look into more git plugins
 - nvim dashboard
 - nvim colorizer
