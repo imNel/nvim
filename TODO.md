@@ -1,6 +1,4 @@
 # Todo
-- remove format on save
-- keybind for formatting
 - lua line formatting
 - look into more git plugins
 - nvim dashboard

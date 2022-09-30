@@ -2,6 +2,7 @@ local nmap = require('nel.utils.keymap').nmap
 local nnoremap = require('nel.utils.keymap').nnoremap
 local inoremap = require('nel.utils.keymap').inoremap
 local vnoremap = require('nel.utils.keymap').vnoremap
+local xnoremap = require('nel.utils.keymap').xnoremap
 
 -- Launch telescope
 nnoremap("<C-p>", "<cmd>Telescope find_files <CR>")
@@ -21,6 +22,7 @@ nnoremap("gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
 nnoremap("gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
 nnoremap("gr", "<cmd>lua vim.lsp.buf.references()<CR>")
 nnoremap("gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
+-- NOTE: Magic keybinds for formatting in plugins/config/null-ls.lua
 
 -- Window Keybinds
 nnoremap("<C-w>z", "<cmd>:WindowsMaximize<CR>")
