@@ -9,6 +9,4 @@
 - bufferline with shift h and l to navigate buffers
 - better way to split windows
 - netrw replacement/setup? vscode-like tree is convenient but maybe a better alternative. something similar to ranger maybe
-- auto install and enable treesitter for detected lang
 - auto switch to right when creating buffer split
-- jsx aware commenting

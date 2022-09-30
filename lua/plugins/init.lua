@@ -20,6 +20,7 @@ return require('packer').startup(function(use)
   use {
     'nvim-treesitter/nvim-treesitter',
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+    config = function() require('plugins.config.treesitter') end
   }
 
   -- Theme
@@ -70,9 +71,10 @@ return require('packer').startup(function(use)
 
   -- Comment Toggle
   use {
-    'terrortylor/nvim-comment',
+    'numToStr/Comment.nvim',
     config = function() require('plugins.config.comment') end
-  }
+  }  
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   -- Git
   use 'f-person/git-blame.nvim'
