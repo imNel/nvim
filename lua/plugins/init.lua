@@ -25,9 +25,7 @@ return require('packer').startup(function(use)
   -- Theme
   use {
     'folke/tokyonight.nvim',
-    config = function() 
-      vim.cmd[[colorscheme tokyonight]]
-    end
+    config = function() vim.cmd[[colorscheme tokyonight]] end
   }
 
   -- Dashboard nvim -- need to configure before uncommenting
@@ -40,9 +38,7 @@ return require('packer').startup(function(use)
   use 'onsails/lspkind.nvim'
   use {
     'hrsh7th/nvim-cmp', 
-    config = function()
-      require('plugins.config.cmp')
-    end
+    config = function() require('plugins.config.cmp') end
   }
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
@@ -54,15 +50,11 @@ return require('packer').startup(function(use)
   -- LSP
   use {
     'neovim/nvim-lspconfig', 
-    config = function()
-      require('plugins.config.lsp')
-    end
+    config = function() require('plugins.config.lsp') end
   }
   use {
     'jose-elias-alvarez/null-ls.nvim',
-    config = function()
-      require('plugins.config.null-ls')
-    end
+    config = function() require('plugins.config.null-ls') end
   }
   
   -- Telescope
@@ -73,17 +65,13 @@ return require('packer').startup(function(use)
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-    config = function()
-      require('plugins.config.lualine')
-    end,
+    config = function() require('plugins.config.lualine') end
   }
 
   -- Comment Toggle
   use {
     'terrortylor/nvim-comment',
-    config = function()
-      require('plugins.config.comment')
-    end
+    config = function() require('plugins.config.comment') end
   }
 
   -- Git
@@ -95,16 +83,12 @@ return require('packer').startup(function(use)
     requires = {
       "anuvyklack/middleclass",
     },
-    config = function()
-      require('windows').setup()
-    end
+    config = function() require('windows').setup() end
   }
 
   use {
 	  "windwp/nvim-autopairs",
-    config = function() 
-      require("nvim-autopairs").setup {} 
-    end
+    config = function() require("nvim-autopairs").setup {} end
   }
 
   -- Auto install packer if not detected
