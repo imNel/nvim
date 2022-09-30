@@ -4,6 +4,7 @@ local inoremap = require('nel.utils.keymap').inoremap
 -- Launch telescope
 nnoremap("<C-p>", "<cmd>Telescope find_files hidden=true no_ignore=true<CR>")
 nnoremap("<C-k>", "<cmd>Telescope live_grep <CR>")
+nnoremap("<C-space>", "<cmd>Telescope live_grep <CR>")
 
 -- Alt Up/Down to move lines
 -- TODO Make it work with highlighting lines

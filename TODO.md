@@ -6,7 +6,6 @@
 - keybind to yank to clipboard (something to do with "+y"?)
 - lua line formatting
 - min line height
-- remap telescope find files to ctrl space
 - remap autocomplete to ctrl space
 - look into more git plugins
 - nvim dashboard
