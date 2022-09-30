@@ -1,7 +1,6 @@
 # Todo
 - remove format on save
 - keybind for formatting
-- keybind to yank to clipboard (something to do with "+y"?)
 - lua line formatting
 - min line height
 - remap autocomplete to ctrl space

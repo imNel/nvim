@@ -1,5 +1,7 @@
+local nmap = require('nel.utils.keymap').nmap
 local nnoremap = require('nel.utils.keymap').nnoremap
 local inoremap = require('nel.utils.keymap').inoremap
+local vnoremap = require('nel.utils.keymap').vnoremap
 
 -- Launch telescope
 nnoremap("<C-p>", "<cmd>Telescope find_files <CR>")
@@ -26,3 +28,8 @@ nnoremap("<C-h>", "<C-w>h")
 nnoremap("<C-j>", "<C-w>j")
 nnoremap("<C-k>", "<C-w>k")
 nnoremap("<C-l>", "<C-w>l")
+
+-- Clipboard
+nnoremap("<leader>y", "\"+y")
+vnoremap("<leader>y", "\"+y")
+nmap("<leader>Y", "\"+Y")
