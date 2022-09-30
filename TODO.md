@@ -6,5 +6,6 @@
 - nvim colorizer
 - bufferline with telescope, keybinds to navigate buffers?
 - better way to split windows
-- netrw replacement/setup? vscode-like tree is convenient but maybe a better alternative. something similar to ranger maybe
+- netrw replacement/setup? vscode-like tree is convenient but maybe a better alternative. something similar to ranger maybe, telescope file explorer?
 - auto switch to right when creating buffer split
+- change autocomplete key from enter to something else?
