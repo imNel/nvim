@@ -2,8 +2,7 @@ local nnoremap = require('nel.utils.keymap').nnoremap
 local inoremap = require('nel.utils.keymap').inoremap
 
 -- Launch telescope
-nnoremap("<C-p>", "<cmd>Telescope find_files hidden=true no_ignore=true<CR>")
-nnoremap("<C-k>", "<cmd>Telescope live_grep <CR>")
+nnoremap("<C-p>", "<cmd>Telescope find_files <CR>")
 nnoremap("<C-space>", "<cmd>Telescope live_grep <CR>")
 
 -- Alt Up/Down to move lines
