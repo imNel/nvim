@@ -60,8 +60,11 @@ return require('packer').startup(function(use)
   
   -- Telescope
   use 'nvim-lua/plenary.nvim'
-  use 'nvim-telescope/telescope.nvim'
-
+  use {
+    'nvim-telescope/telescope.nvim', 
+    config = function() require('plugins.config.telescope') end
+  }
+  use 'nvim-telescope/telescope-file-browser.nvim'
   -- Lualine
   use {
     'nvim-lualine/lualine.nvim',

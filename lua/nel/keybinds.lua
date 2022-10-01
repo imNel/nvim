@@ -7,6 +7,8 @@ local xnoremap = require('nel.utils.keymap').xnoremap
 -- Launch telescope
 nnoremap("<C-p>", "<cmd>Telescope find_files <CR>")
 nnoremap("<C-space>", "<cmd>Telescope live_grep <CR>")
+nnoremap("<leader>b", "<cmd>Telescope buffers<CR>")
+nnoremap("<leader>e", "<cmd>Telescope file_browser<CR>")
 
 -- Alt Up/Down to move lines
 -- TODO Make it work with highlighting lines
@@ -18,10 +20,9 @@ nnoremap("<A-j>", "<cmd>m+<CR>")
 -- inoremap("<A-j>", "<Esc><cmd>m+<CR>a")
 
 -- LSP Binds
-nnoremap("gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
-nnoremap("gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
-nnoremap("gr", "<cmd>lua vim.lsp.buf.references()<CR>")
-nnoremap("gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
+nnoremap("gd", "<cmd>Telescope lsp_definitions<CR>")
+nnoremap("gr", "<cmd>Telescope lsp_references<CR>")
+nnoremap("gi", "<cmd>Telescope lsp_implementations<CR>")
 -- NOTE: Magic keybinds for formatting in plugins/config/null-ls.lua
 
 -- Window Keybinds
@@ -35,3 +36,10 @@ nnoremap("<C-l>", "<C-w>l")
 nnoremap("<leader>y", "\"+y")
 vnoremap("<leader>y", "\"+y")
 nmap("<leader>Y", "\"+Y")
+
+-- Git
+local g = "<leader>g" 
+nnoremap(g.."b", "<cmd>Telescope git_branches<CR>")
+nnoremap(g.."s", "<cmd>Telescope git_status<CR>")
+nnoremap(g.."u", "<cmd>GitBlameOpenCommitURL<CR>")
+nnoremap(g.."?", "<cmd>GitBlameToggle<CR>")
