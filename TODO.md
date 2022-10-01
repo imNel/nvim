@@ -8,3 +8,4 @@
 - auto switch to right when creating buffer split
 - change autocomplete key from enter to something else?
 - Add bindings for more telescope menus https://github.com/nvim-telescope/telescope.nvim/wiki/Showcase
+- alt-j/k moving blocks in highlighted mode

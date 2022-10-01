@@ -11,7 +11,6 @@ nnoremap("<leader>b", "<cmd>Telescope buffers<CR>")
 nnoremap("<leader>e", "<cmd>Telescope file_browser<CR>")
 
 -- Alt Up/Down to move lines
--- TODO Make it work with highlighting lines
 nnoremap("<A-k>", "<cmd>m-2<CR>")
 nnoremap("<A-j>", "<cmd>m+<CR>")
 
