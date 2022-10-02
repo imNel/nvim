@@ -16,3 +16,11 @@ require'lspconfig'.intelephense.setup{
 require'lspconfig'.cssls.setup {
   capabilities = capabilities,
 }
+
+require'lspconfig'.gdscript.setup{
+  capabilities = capabilities,
+}
+
+require'lspconfig'.sumneko_lua.setup{
+  capabilities = capabilities,
+}
