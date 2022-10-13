@@ -7,7 +7,9 @@ require('lspconfig').tsserver.setup {
     client.resolved_capabilities.document_range_formatting = false
   end,
 }
--- require'lspconfig'.eslint.setup{}
+require'lspconfig'.eslint.setup{
+  capabilities = capabilities,
+}
 -- require'lspconfig'.cssls.setup{}
 require'lspconfig'.intelephense.setup{
   capabilities = capabilities,
