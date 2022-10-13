@@ -3,15 +3,11 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 require('lspconfig').tsserver.setup {
   capabilities = capabilities,
   on_attach = function(client, bufnr)
-    client.resolved_capabilities.document_formatting = false
-    client.resolved_capabilities.document_range_formatting = false
+    client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
   end,
 }
 require'lspconfig'.eslint.setup{
-  capabilities = capabilities,
-}
--- require'lspconfig'.cssls.setup{}
-require'lspconfig'.intelephense.setup{
   capabilities = capabilities,
 }
 
