@@ -1,4 +1,4 @@
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 require('lspconfig').tsserver.setup {
   capabilities = capabilities,
@@ -7,7 +7,11 @@ require('lspconfig').tsserver.setup {
     client.server_capabilities.documentRangeFormattingProvider = false
   end,
 }
-require'lspconfig'.eslint.setup{
+require'lspconfig'.eslint.setup {
+  capabilities = capabilities,
+}
+
+require'lspconfig'.tailwindcss.setup {
   capabilities = capabilities,
 }
 
@@ -15,10 +19,23 @@ require'lspconfig'.cssls.setup {
   capabilities = capabilities,
 }
 
-require'lspconfig'.gdscript.setup{
+require'lspconfig'.gdscript.setup {
   capabilities = capabilities,
 }
 
-require'lspconfig'.sumneko_lua.setup{
+require'lspconfig'.sumneko_lua.setup {
   capabilities = capabilities,
 }
+
+require'lspconfig'.astro.setup {
+  capabilities = capabilities,
+}
+
+require'lspconfig'.svelte.setup {
+  capabilities = capabilities,
+}
+
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+  border = "rounded",
+})

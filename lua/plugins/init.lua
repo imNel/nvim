@@ -28,6 +28,7 @@ return require('packer').startup(function(use)
     'folke/tokyonight.nvim',
     config = function() vim.cmd[[colorscheme tokyonight]] end
   }
+  use "kyazdani42/nvim-web-devicons"
 
   -- Dashboard nvim -- need to configure before uncommenting
   -- use 'glepnir/dashboard-nvim'
@@ -65,10 +66,12 @@ return require('packer').startup(function(use)
     config = function() require('plugins.config.telescope') end
   }
   use 'nvim-telescope/telescope-file-browser.nvim'
+
+
+  
   -- Lualine
   use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
     config = function() require('plugins.config.lualine') end
   }
 
@@ -91,10 +94,20 @@ return require('packer').startup(function(use)
     config = function() require('windows').setup() end
   }
 
+  -- Error msgs
+  use {
+    "folke/trouble.nvim",
+    config = function() require("trouble").setup {} end
+  }
+
   use {
 	  "windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
   }
+
+  use 'andweeb/presence.nvim'
+
+  use 'AndrewRadev/tagalong.vim'
 
   -- Auto install packer if not detected
   if packer_bootstrap then

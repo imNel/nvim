@@ -20,8 +20,11 @@ nnoremap("<A-j>", "<cmd>m+<CR>")
 
 -- LSP Binds
 nnoremap("gd", "<cmd>Telescope lsp_definitions<CR>")
+nnoremap("gh", "<cmd>lua vim.lsp.buf.hover()<CR>")
 nnoremap("gr", "<cmd>Telescope lsp_references<CR>")
 nnoremap("gi", "<cmd>Telescope lsp_implementations<CR>")
+nnoremap("<leader>w", "<cmd>TroubleToggle<CR>")
+nnoremap("<leader>f", "<cmd>lua vim.lsp.buf.format{async=true}<CR>")
 -- NOTE: Magic keybinds for formatting in plugins/config/null-ls.lua
 
 -- Window Keybinds
