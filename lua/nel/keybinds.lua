@@ -8,15 +8,11 @@ local xnoremap = require('nel.utils.keymap').xnoremap
 nnoremap("<C-p>", "<cmd>Telescope find_files <CR>")
 nnoremap("<C-space>", "<cmd>Telescope live_grep <CR>")
 nnoremap("<leader>b", "<cmd>Telescope buffers<CR>")
-nnoremap("<leader>e", "<cmd>Telescope file_browser<CR>")
+nnoremap("<leader>e", "<cmd>Explore<CR>")
 
--- Alt Up/Down to move lines
-nnoremap("<A-k>", "<cmd>m-2<CR>")
-nnoremap("<A-j>", "<cmd>m+<CR>")
-
--- Letting it work in insert mode, idk if i want this
--- inoremap("<A-k>", "<Esc><cmd>m-2<CR>a")
--- inoremap("<A-j>", "<Esc><cmd>m+<CR>a")
+-- -- Alt Up/Down to move lines
+-- nnoremap("<A-k>", "<cmd>m-2<CR>")
+-- nnoremap("<A-j>", "<cmd>m+<CR>")
 
 -- LSP Binds
 nnoremap("gd", "<cmd>Telescope lsp_definitions<CR>")
@@ -25,7 +21,6 @@ nnoremap("gr", "<cmd>Telescope lsp_references<CR>")
 nnoremap("gi", "<cmd>Telescope lsp_implementations<CR>")
 nnoremap("<leader>w", "<cmd>TroubleToggle<CR>")
 nnoremap("<leader>f", "<cmd>lua vim.lsp.buf.format{async=true}<CR>")
--- NOTE: Magic keybinds for formatting in plugins/config/null-ls.lua
 
 -- Window Keybinds
 nnoremap("<C-w>z", "<cmd>:WindowsMaximize<CR>")

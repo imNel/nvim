@@ -6,6 +6,11 @@ o.number = true
 o.numberwidth = 4
 o.relativenumber = true
 
+-- Netrw
+g.netrw_keepdir = 0
+g.netrw_banner = 0
+g.netrw_localcopydircmd = 'cp -r'
+
 -- Indentation
 o.tabstop = 2
 o.softtabstop = 2
