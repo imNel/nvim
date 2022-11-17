@@ -73,8 +73,6 @@ return require('packer').startup(function(use)
   }
   use 'nvim-telescope/telescope-file-browser.nvim'
 
-  use 'rcarriga/nvim-notify'
-  
   -- Lualine
   use {
     'nvim-lualine/lualine.nvim',
@@ -115,13 +113,13 @@ return require('packer').startup(function(use)
 
   use 'AndrewRadev/tagalong.vim'
 
-  use {
-    'folke/noice.nvim',
-    requires = {
-      "MunifTanjim/nui.nvim",
-    },
-    config = function() require('plugins.config.noice') end
-  }
+  -- use {
+  --   'folke/noice.nvim',
+  --   requires = {
+  --     "MunifTanjim/nui.nvim",
+  --   },
+  --   config = function() require('plugins.config.noice') end
+  -- }
 
   -- Auto install packer if not detected
   if packer_bootstrap then
