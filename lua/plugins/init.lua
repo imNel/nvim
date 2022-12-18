@@ -27,13 +27,13 @@ return require('packer').startup(function(use)
   use 'folke/tokyonight.nvim'
   use {
     'eddyekofo94/gruvbox-flat.nvim',
-    config = function() vim.cmd[[colorscheme gruvbox-flat]] end
+    config = function() vim.cmd[[colorscheme tokyonight-storm]] end
   }
   use 'kyazdani42/nvim-web-devicons'
 
   use {
     'NvChad/nvim-colorizer.lua',
-    config = function() require("colorizer").setup() end
+    config = function() require('plugins.config.colorizer') end
   }
 
   -- Dashboard nvim -- need to configure before uncommenting
@@ -73,6 +73,8 @@ return require('packer').startup(function(use)
   }
   use 'nvim-telescope/telescope-file-browser.nvim'
 
+  use 'mbbill/undotree'
+
   -- Lualine
   use {
     'nvim-lualine/lualine.nvim',
@@ -111,8 +113,6 @@ return require('packer').startup(function(use)
 
   use 'andweeb/presence.nvim'
 
-  use 'AndrewRadev/tagalong.vim'
-
   -- use {
   --   'folke/noice.nvim',
   --   requires = {
@@ -120,6 +120,11 @@ return require('packer').startup(function(use)
   --   },
   --   config = function() require('plugins.config.noice') end
   -- }
+
+  use 'ThePrimeagen/harpoon'
+
+  -- Copilot
+  use 'github/copilot.vim'
 
   -- Auto install packer if not detected
   if packer_bootstrap then

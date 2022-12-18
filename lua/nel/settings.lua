@@ -18,6 +18,10 @@ o.shiftwidth = 2
 o.expandtab = true
 o.smartindent = true
 
+-- Window behaviour
+o.splitright = true
+o.splitbelow = true
+
 -- Others
 o.wrap = false
 -- o.guicursor = "" -- Removes thin cursor
