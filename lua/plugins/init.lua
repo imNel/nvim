@@ -36,8 +36,11 @@ return require('packer').startup(function(use)
     config = function() require('plugins.config.colorizer') end
   }
 
-  -- Dashboard nvim -- need to configure before uncommenting
-  -- use 'glepnir/dashboard-nvim'
+  use {
+    'goolord/alpha-nvim',
+    requires = { 'nvim-tree/nvim-web-devicons' },
+    config = function() require('alpha').setup(require('alpha.themes.startify').config) end
+  }
   
   -- Snippets
   use 'L3MON4D3/LuaSnip'
@@ -111,7 +114,7 @@ return require('packer').startup(function(use)
     config = function() require("nvim-autopairs").setup {} end
   }
 
-  use 'andweeb/presence.nvim'
+  -- use 'andweeb/presence.nvim'
 
   -- use {
   --   'folke/noice.nvim',
@@ -125,6 +128,14 @@ return require('packer').startup(function(use)
 
   -- Copilot
   use 'github/copilot.vim'
+
+  use {
+    "lukas-reineke/indent-blankline.nvim",
+    config = function() require('indent_blankline').setup {
+      char = '┊',
+      show_trailing_blankline_indent = false,
+    } end
+  }
 
   -- Auto install packer if not detected
   if packer_bootstrap then

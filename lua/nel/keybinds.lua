@@ -10,7 +10,7 @@ vim.keymap.set("n", "J", "mzJ`z")
 
 -- Keepin stuff centred
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "<C-d>", "<C-u>zz")
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
@@ -50,5 +50,5 @@ vim.keymap.set("n", g.."?", "<cmd>GitBlameToggle<CR>")
 
 -- Harpoon
 vim.keymap.set("n", "<leader>h", function() require('harpoon.ui').toggle_quick_menu() end)
-vim.keymap.set("n", "<leader>a", function() require("harpoon.mark").add_file() end)
+vim.keymap.set("n", "<leader>a", function() require("harpoon.mark").toggle_file() end)
 for i=1,9 do vim.keymap.set("n", "<leader>"..i, function() require("harpoon.ui").nav_file(i) end) end
