@@ -1,5 +1,10 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
+require("mason").setup()
+require("mason-lspconfig").setup {
+  ensure_installed = { "sumneko_lua", "tsserver" },
+}
+
 require('lspconfig').tsserver.setup {
   capabilities = capabilities,
   on_attach = function(client, bufnr)

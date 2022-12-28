@@ -1,9 +1,9 @@
 -- Make sure packer is installed on first launch
 local ensure_packer = function()
   local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
   if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
     vim.cmd [[packadd packer.nvim]]
     return true
   end
@@ -27,7 +27,7 @@ return require('packer').startup(function(use)
   use 'folke/tokyonight.nvim'
   use {
     'eddyekofo94/gruvbox-flat.nvim',
-    config = function() vim.cmd[[colorscheme tokyonight-storm]] end
+    config = function() vim.cmd [[colorscheme tokyonight-storm]] end
   }
   use 'kyazdani42/nvim-web-devicons'
 
@@ -41,14 +41,14 @@ return require('packer').startup(function(use)
     requires = { 'nvim-tree/nvim-web-devicons' },
     config = function() require('alpha').setup(require('alpha.themes.startify').config) end
   }
-  
+
   -- Snippets
   use 'L3MON4D3/LuaSnip'
 
   -- Autocomplete
   use 'onsails/lspkind.nvim'
   use {
-    'hrsh7th/nvim-cmp', 
+    'hrsh7th/nvim-cmp',
     config = function() require('plugins.config.cmp') end
   }
   use 'hrsh7th/cmp-buffer'
@@ -60,18 +60,20 @@ return require('packer').startup(function(use)
 
   -- LSP
   use {
-    'neovim/nvim-lspconfig', 
+    'neovim/nvim-lspconfig',
     config = function() require('plugins.config.lsp') end
   }
   use {
     'jose-elias-alvarez/null-ls.nvim',
     config = function() require('plugins.config.null-ls') end
   }
-  
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
+
   -- Telescope
   use 'nvim-lua/plenary.nvim'
   use {
-    'nvim-telescope/telescope.nvim', 
+    'nvim-telescope/telescope.nvim',
     config = function() require('plugins.config.telescope') end
   }
   use 'nvim-telescope/telescope-file-browser.nvim'
@@ -88,14 +90,14 @@ return require('packer').startup(function(use)
   use {
     'numToStr/Comment.nvim',
     config = function() require('plugins.config.comment') end
-  }  
+  }
   use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   -- Git
   use 'f-person/git-blame.nvim'
 
   -- Auto-size windows
-  use { 
+  use {
     "anuvyklack/windows.nvim",
     requires = {
       "anuvyklack/middleclass",
@@ -110,7 +112,7 @@ return require('packer').startup(function(use)
   }
 
   use {
-	  "windwp/nvim-autopairs",
+    "windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
   }
 
@@ -132,9 +134,10 @@ return require('packer').startup(function(use)
   use {
     "lukas-reineke/indent-blankline.nvim",
     config = function() require('indent_blankline').setup {
-      char = '┊',
-      show_trailing_blankline_indent = false,
-    } end
+        char = '┊',
+        show_trailing_blankline_indent = false,
+      }
+    end
   }
 
   -- Auto install packer if not detected
