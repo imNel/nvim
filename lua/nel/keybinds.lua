@@ -35,20 +35,33 @@ vim.keymap.set("n", "<C-l>", "<C-w>l")
 -- System Clipboard
 vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
-vim.keymap.set("n","<leader>Y", "\"+Y")
+vim.keymap.set("n", "<leader>Y", "\"+Y")
 -- Void Clipboard
 vim.keymap.set("x", "<leader>p", "\"_dP")
 vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
 
 -- Git
-local g = "<leader>g" 
-vim.keymap.set("n", g.."b", "<cmd>Telescope git_branches<CR>")
-vim.keymap.set("n", g.."s", "<cmd>Telescope git_status<CR>")
-vim.keymap.set("n", g.."u", "<cmd>GitBlameOpenCommitURL<CR>")
-vim.keymap.set("n", g.."?", "<cmd>GitBlameToggle<CR>")
+local g = "<leader>g"
+vim.keymap.set("n", g .. "b", "<cmd>Telescope git_branches<CR>")
+vim.keymap.set("n", g .. "s", "<cmd>Telescope git_status<CR>")
+vim.keymap.set("n", g .. "u", "<cmd>GitBlameOpenCommitURL<CR>")
+vim.keymap.set("n", g .. "?", "<cmd>GitBlameToggle<CR>")
 
 -- Harpoon
 vim.keymap.set("n", "<leader>h", function() require('harpoon.ui').toggle_quick_menu() end)
 vim.keymap.set("n", "<leader>a", function() require("harpoon.mark").toggle_file() end)
-for i=1,9 do vim.keymap.set("n", "<leader>"..i, function() require("harpoon.ui").nav_file(i) end) end
+for i = 1, 9 do vim.keymap.set("n", "<leader>" .. i, function() require("harpoon.ui").nav_file(i) end) end
+
+-- Terminals
+local Terminal = require('toggleterm.terminal').Terminal
+local lazygit  = Terminal:new({ cmd = "lazygit", hidden = true, direction = "float", float_opts = { border = "curved" } })
+
+local function lazyGit()
+  lazygit:toggle()
+end
+
+vim.keymap.set("n", "<leader>l", function() lazyGit() end)
+vim.keymap.set("t", "<leader>l", function() lazyGit() end)
+vim.keymap.set("n", "<leader>t", "<cmd>:ToggleTerm direction=float<CR>")
+vim.keymap.set("t", "<leader>t", "<cmd>:ToggleTerm direction=float<CR>")
