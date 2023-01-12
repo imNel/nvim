@@ -148,6 +148,12 @@ return require('packer').startup(function(use)
     }
   end }
 
+  use {
+    'ggandor/leap.nvim',
+    requires = { 'tpope/vim-repeat' },
+    config = function() require('leap').add_default_mappings() end
+  }
+
   -- Auto install packer if not detected
   if packer_bootstrap then
     require('packer').sync()
