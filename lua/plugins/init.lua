@@ -42,33 +42,41 @@ return require('packer').startup(function(use)
     config = function() require('alpha').setup(require('alpha.themes.startify').config) end
   }
 
-  -- Snippets
-  use 'L3MON4D3/LuaSnip'
-
-  -- Autocomplete
+  -- -- Autocomplete
   use 'onsails/lspkind.nvim'
   use {
     'hrsh7th/nvim-cmp',
-    config = function() require('plugins.config.cmp') end
+    config = function() require('plugins.config.cmp') end,
+    requires = { { 'hrsh7th/cmp-cmdline' } }
   }
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-nvim-lua'
-  use 'hrsh7th/cmp-cmdline'
-  use 'saadparwaiz1/cmp_luasnip'
 
   -- LSP
   use {
-    'neovim/nvim-lspconfig',
-    config = function() require('plugins.config.lsp') end
+    'VonHeikemen/lsp-zero.nvim',
+    config = function() require('plugins.config.lsp') end,
+    requires = {
+      -- LSP Support
+      { 'neovim/nvim-lspconfig' }, -- Required
+      { 'williamboman/mason.nvim' }, -- Optional
+      { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+
+      -- Autocompletion
+      { 'hrsh7th/nvim-cmp' }, -- Required
+      { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+      { 'hrsh7th/cmp-buffer' }, -- Optional
+      { 'hrsh7th/cmp-path' }, -- Optional
+      { 'saadparwaiz1/cmp_luasnip' }, -- Optional
+      { 'hrsh7th/cmp-nvim-lua' }, -- Optional
+
+      -- Snippets
+      { 'L3MON4D3/LuaSnip' }, -- Required
+      { 'rafamadriz/friendly-snippets' }, -- Optional
+    }
   }
   use {
     'jose-elias-alvarez/null-ls.nvim',
     config = function() require('plugins.config.null-ls') end
   }
-  use "williamboman/mason.nvim"
-  use "williamboman/mason-lspconfig.nvim"
 
   -- Telescope
   use 'nvim-lua/plenary.nvim'
@@ -109,11 +117,6 @@ return require('packer').startup(function(use)
   use {
     "folke/trouble.nvim",
     config = function() require("trouble").setup {} end
-  }
-
-  use {
-    "windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup {} end
   }
 
   -- use 'andweeb/presence.nvim'

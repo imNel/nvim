@@ -1,6 +1,7 @@
-local cmp = require'cmp'
-local lspkind = require'lspkind'
+local cmp = require 'cmp'
+local lspkind = require 'lspkind'
 
+--
 cmp.setup({
   mapping = cmp.mapping.preset.insert({
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -27,15 +28,16 @@ cmp.setup({
   }),
   formatting = {
     format = lspkind.cmp_format({
+      mode= 'text_symbol',
+      maxwidth = 50,
+      ellipsis_char = '...',
       with_text = true,
       menu = {
-        buffer = "[buf]",
-        nvim_lsp = "[LSP]",
-        nvim_lua = "[api]",
-        path = "[path]",
-        luasnip = "[snip]",
-        gh_issues = "[issues]",
-        tn = "[TabNine]",
+        nvim_lsp = " ",
+        nvim_lua = " ",
+        luasnip = " ",
+        path = " ",
+        buffer = " ",
       },
     })
   },
@@ -44,7 +46,7 @@ cmp.setup({
   },
 })
 
--- Set configuration for specific filetype.
+-- Git Commit Files
 cmp.setup.filetype('gitcommit', {
   sources = cmp.config.sources({
     { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
@@ -53,15 +55,21 @@ cmp.setup.filetype('gitcommit', {
   })
 })
 
--- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+-- cmp on search
 cmp.setup.cmdline('/', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
     { name = 'buffer' }
   }
 })
+cmp.setup.cmdline('?', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' }
+  }
+})
 
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+-- cmp on command
 cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
@@ -70,10 +78,3 @@ cmp.setup.cmdline(':', {
     { name = 'cmdline' }
   })
 })
-
--- Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
--- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
--- require('lspconfig')['tsserver', 'eslint', 'cssls'].setup {
---  capabilities = capabilities
---}
