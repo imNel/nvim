@@ -19,7 +19,8 @@ vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>")
 vim.keymap.set("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>")
 vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<CR>")
 vim.keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>")
-vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format{async=true} end)
+vim.keymap.set("n", "<leader>f",
+  function() vim.lsp.buf.format { async = true, filter = function(client) return client.name ~= "tsserver" end } end)
 
 -- Plugin Binds
 vim.keymap.set("n", "<leader>w", "<cmd>TroubleToggle<CR>")
@@ -64,3 +65,5 @@ end
 vim.keymap.set("n", "gl", function() lazyGit() end)
 vim.keymap.set("n", "<leader>t", "<cmd>:ToggleTerm direction=float<CR>")
 vim.keymap.set("t", "<ESC>", "<cmd>:ToggleTerm direction=float<CR>")
+
+vim.keymap.set("n", "<ESC>", "<cmd>:noh<CR><ESC>")
