@@ -29,3 +29,23 @@ o.mouse = "a" -- Fixes mouse highlighting etc
 o.scrolloff = 8
 g.mapleader = " "
 o.termguicolors = true
+o.conceallevel = 2
+o.concealcursor = ""
+
+vim.diagnostic.config({
+  underline = true,
+  virtual_text = false,
+  signs = true,
+  update_in_insert = false,
+  severity_sort = true,
+  float = {
+    border = "rounded",
+    style = "minimal",
+    source = "always",
+    prefix = "",
+    header = ""
+  },
+})
+
+o.signcolumn = "yes"
+

@@ -72,6 +72,7 @@ return require('packer').startup(function(use)
     'jose-elias-alvarez/null-ls.nvim',
     config = function() require('plugins.config.null-ls') end
   }
+  use 'folke/neodev.nvim'
 
   -- Telescope
   use 'nvim-lua/plenary.nvim'
@@ -107,6 +108,18 @@ return require('packer').startup(function(use)
     },
     config = function() require('windows').setup() end
   }
+  use {
+    "folke/zen-mode.nvim",
+    config = function() require("zen-mode").setup {
+        plugins = {
+          kitty = {
+            enabled = true,
+            font = "+4", 
+          },
+        },
+      }
+    end
+  }
 
   -- Error msgs
   use {
@@ -138,14 +151,6 @@ return require('packer').startup(function(use)
       }
     end
   }
-
-  use { "akinsho/toggleterm.nvim", tag = '*', config = function()
-    require("toggleterm").setup {
-      float_opts = {
-        border = 'curved',
-      }
-    }
-  end }
 
   use {
     'ggandor/leap.nvim',

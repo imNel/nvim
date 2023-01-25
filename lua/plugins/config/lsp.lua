@@ -2,11 +2,13 @@ require('mason').setup()
 
 require('mason-lspconfig').setup({
   ensure_installed = {
-    -- Replace these with whatever servers you want to install
+    'sumneko_lua',
     'rust_analyzer',
     'tsserver',
   }
 })
+
+require("neodev").setup()
 
 local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lsp_attach = function(client, bufnr)
