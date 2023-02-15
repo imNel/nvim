@@ -1,4 +1,4 @@
--- Launch telescope
+-- Launch telescopekey
 vim.keymap.set("n", "<C-p>", "<cmd>Telescope find_files <CR>")
 vim.keymap.set("n", "<C-space>", "<cmd>Telescope live_grep <CR>")
 vim.keymap.set("n", "<leader>b", "<cmd>Telescope buffers<CR>")
@@ -24,7 +24,7 @@ vim.keymap.set("n", "<leader>f",
   function() vim.lsp.buf.format { async = true, filter = function(client) return client.name ~= "tsserver" end } end)
 
 -- Plugin Binds
-vim.keymap.set("n", "<leader>w", "<cmd>TroubleToggle<CR>")
+vim.keymap.set("n", "<leader>w", "<cmd>Telescope diagnostics<CR>")
 vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<CR><cmd>UndotreeFocus<CR>")
 
 -- Window Keybinds

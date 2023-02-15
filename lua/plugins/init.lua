@@ -16,6 +16,8 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  use '/Users/nel/Clones/plugins/undobuffer'
+
   -- Treesitter
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -25,18 +27,26 @@ return require('packer').startup(function(use)
   use 'nvim-treesitter/playground'
 
   -- Theme
-  use 'folke/tokyonight.nvim'
   use {
-    'eddyekofo94/gruvbox-flat.nvim',
-    config = function() vim.cmd [[colorscheme tokyonight-storm]] end
+    'folke/tokyonight.nvim',
+    -- config = function() vim.cmd.colorscheme "tokyonight" end
   }
-  use 'kyazdani42/nvim-web-devicons'
+  use {
+    "catppuccin/nvim", as = "catppuccin",
+    -- config = function() vim.cmd.colorscheme "catppuccin" end
+  }
+
+  use {
+    "EdenEast/nightfox.nvim",
+    config = function() vim.cmd.colorscheme "duskfox" end
+  }
+  use { 'eddyekofo94/gruvbox-flat.nvim' }
 
   use {
     'NvChad/nvim-colorizer.lua',
     config = function() require('plugins.config.colorizer') end
   }
-
+  use 'kyazdani42/nvim-web-devicons'
   use {
     'goolord/alpha-nvim',
     requires = { 'nvim-tree/nvim-web-devicons' },
@@ -110,24 +120,11 @@ return require('packer').startup(function(use)
   }
   use {
     "folke/zen-mode.nvim",
-    config = function() require("zen-mode").setup {
-        plugins = {
-          kitty = {
-            enabled = true,
-            font = "+4", 
-          },
-        },
-      }
+    config = function() require("zen-mode").setup {}
     end
   }
 
-  -- Error msgs
-  use {
-    "folke/trouble.nvim",
-    config = function() require("trouble").setup {} end
-  }
-
-  -- use 'andweeb/presence.nvim'
+  use 'andweeb/presence.nvim'
 
   -- use {
   --   'folke/noice.nvim',
