@@ -27,7 +27,6 @@ o.wrap = false
 -- o.guicursor = "" -- Removes thin cursor
 o.mouse = "a" -- Fixes mouse highlighting etc
 o.scrolloff = 8
-g.mapleader = " "
 o.termguicolors = true
 o.conceallevel = 2
 o.concealcursor = ""

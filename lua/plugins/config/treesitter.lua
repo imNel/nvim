@@ -1,5 +1,6 @@
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = "all",
+require 'nvim-treesitter.configs'.setup {
+  -- ensure installed: typescript rust lua
+  ensure_installed = { "typescript", "rust", "lua", "tsx", "javascript", "json" },
   sync_install = false,
   auto_install = true,
   ignore_install = { "phpdoc" },

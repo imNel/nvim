@@ -2,7 +2,7 @@ require('mason').setup()
 
 require('mason-lspconfig').setup({
   ensure_installed = {
-    'sumneko_lua',
+    'lua_ls',
     'rust_analyzer',
     'tsserver',
   }
@@ -23,8 +23,4 @@ require('mason-lspconfig').setup_handlers({
       capabilities = lsp_capabilities,
     })
   end,
-})
-
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-  border = "rounded",
 })
