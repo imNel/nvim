@@ -148,15 +148,10 @@ require('lazy').setup({
   'github/copilot.vim',
   -- 'Exafunction/codeium.vim',
 
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    config = function()
-      require('indent_blankline').setup {
-        char = '┊',
-        show_trailing_blankline_indent = false,
-      }
-    end
-  },
+  -- {
+  --   "lukas-reineke/indent-blankline.nvim",
+  --   config = function() require('indent_blankline').setup {space_char_blankline = " "} end
+  -- },
 
   {
     'ggandor/leap.nvim',

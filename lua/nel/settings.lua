@@ -1,6 +1,10 @@
 local o = vim.opt
 local g = vim.g
 
+-- Leader Key
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 -- Line Numbers
 o.number = true
 o.numberwidth = 4
@@ -47,4 +51,3 @@ vim.diagnostic.config({
 })
 
 o.signcolumn = "yes"
-
