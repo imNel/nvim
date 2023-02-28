@@ -13,7 +13,7 @@ o.relativenumber = true
 -- Netrw
 g.netrw_keepdir = 1
 g.netrw_banner = 0
-g.netrw_localcopydircmd = 'cp -r'
+g.netrw_localcopydircmd = "cp -r"
 
 -- Indentation
 o.tabstop = 2
@@ -36,18 +36,18 @@ o.conceallevel = 2
 o.concealcursor = ""
 
 vim.diagnostic.config({
-  underline = true,
-  virtual_text = false,
-  signs = true,
-  update_in_insert = false,
-  severity_sort = true,
-  float = {
-    border = "rounded",
-    style = "minimal",
-    source = "always",
-    prefix = "",
-    header = ""
-  },
+	underline = true,
+	virtual_text = false,
+	signs = true,
+	update_in_insert = false,
+	severity_sort = true,
+	float = {
+		border = "rounded",
+		style = "minimal",
+		source = "always",
+		prefix = "",
+		header = "",
+	},
 })
 
 o.signcolumn = "yes"
